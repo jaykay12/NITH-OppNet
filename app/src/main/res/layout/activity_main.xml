@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="jaykay12.nithoppnet.MainActivity">
 
+    <EditText
+        android:id="@+id/etUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/Large_Margin"
+        android:ems="10"
+        android:hint="Enter your Name"
+        android:inputType="textPersonName"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello NITH!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="First-Ever Opportunistic Network of NITH!"
+        android:id="@+id/tvTitle"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WiFi-Direct Message Chat"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/btnWifiDirect"
+        android:onClick="startWiFiDirect"
+        android:layout_below="@+id/tvTitle"/>
+
+    <TextView
+        android:id="@+id/tvPortInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnWifiDirect"
+        android:layout_marginTop="@dimen/Large_Margin"
+        android:gravity="center"
+        android:hint="@string/port_info"
+        android:textSize="20sp"/>
+
+</RelativeLayout>

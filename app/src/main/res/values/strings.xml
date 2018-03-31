@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NITH OppNet</string>
+    <string name="wifi_not_enabled_error">Please enable Wi-Fi to continue</string>
+    <string name="port_info">Port Information</string>
+    <string name="chat_request_title">Chat Request from %s</string>
+    <string name="wd_title_with_count">Wifi-Direct(%s)</string>
 </resources>
