@@ -68,7 +68,7 @@ public class ChatActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
-            Toast.makeText(ChatActivity.this, "Invalid arguments to open chat",Toast.LENGTH_LONG);
+            Toast.makeText(ChatActivity.this, "Invalid arguments to open chat",Toast.LENGTH_LONG).show();
             finish();
         }
 

@@ -6,15 +6,15 @@ package jaykay12.nithoppnet.transfer;
 
 public interface TransferConstants {
 
-    int INITIAL_DEFAULT_PORT = 8998;
+    int INITIAL_DEFAULT_PORT = 8898;
 
-    int CLIENT_DATA = 3001;
-    int CLIENT_DATA_WD = 3003;
-    int CLIENT_LOST = 3002;
-    int CHAT_DATA = 3004;
-    int CHAT_REQUEST_SENT = 3011;
-    int CHAT_REQUEST_ACCEPTED = 3012;
-    int CHAT_REQUEST_REJECTED = 3013;
+    int CLIENT_DATA = 4001;
+    int CLIENT_DATA_WD = 4003;
+    int CLIENT_LOST = 4002;
+    int CHAT_DATA = 4004;
+    int CHAT_REQUEST_SENT = 4011;
+    int CHAT_REQUEST_ACCEPTED = 4012;
+    int CHAT_REQUEST_REJECTED = 4013;
 
     String TYPE_REQUEST = "request";
     String TYPE_RESPONSE = "response";

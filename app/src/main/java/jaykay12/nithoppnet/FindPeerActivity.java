@@ -69,6 +69,8 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_peer);
+
+        initialize();
     }
 
     private void initialize() {
@@ -213,12 +215,11 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
                 case DataHandler.CHAT_RESPONSE_RECEIVED:
                     boolean isChatRequestAccepted = intent.getBooleanExtra(DataHandler.KEY_IS_CHAT_REQUEST_ACCEPTED, false);
                     if (!isChatRequestAccepted) {
-                        Toast.makeText(FindPeerActivity.this, "Chat request " +
-                                "rejected",Toast.LENGTH_LONG);
+                        Toast.makeText(FindPeerActivity.this, "Chat request " + "rejected",Toast.LENGTH_LONG).show();
                     } else {
                         DeviceDTO chatDevice = (DeviceDTO) intent.getSerializableExtra(DataHandler.KEY_CHAT_REQUEST);
                         DialogUtils.openChatActivity(FindPeerActivity.this, chatDevice);
-                        Toast.makeText(FindPeerActivity.this, chatDevice.getPlayerName() + "Accepted Chat request",Toast.LENGTH_LONG);
+                        Toast.makeText(FindPeerActivity.this, chatDevice.getPlayerName() + "Accepted Chat request",Toast.LENGTH_LONG).show();
                     }
                     break;
                 default:
@@ -270,12 +271,6 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
 
             isWDConnected = true;
 
-//            connListener.tearDown();
-//            connListener = new ConnectionListener(LocalDashWiFiDirect.this, ConnectionUtils.getPort
-//                    (LocalDashWiFiDirect.this));
-//            connListener.start();
-//            appController.stopConnectionListener();
-//            appController.startConnectionListener(ConnectionUtils.getPort(LocalDashWiFiDirect.this));
             appController.restartConnectionListenerWith(ConnectionUtils.getPort(FindPeerActivity.this));
 
             String groupOwnerAddress = wifiP2pInfo.groupOwnerAddress.getHostAddress();

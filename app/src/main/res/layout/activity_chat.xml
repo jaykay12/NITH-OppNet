@@ -27,10 +27,10 @@
         android:id="@+id/etChatBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type your message here . . ."
-        android:maxLines="3"
+        android:hint="Type here..."
+        android:maxLines="2"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/fabSend"
+        android:layout_toLeftOf="@+id/fabSend"
         android:layout_marginRight="@dimen/Little_Margin"/>
 
     <android.support.design.widget.FloatingActionButton

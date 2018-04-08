@@ -96,7 +96,7 @@ public class ConnectionListener extends Thread {
             //If control comes here that means the byte array sent is not the transfer object
             // that was expected. Processing it as a file (JPEG)
             final File f = new File(Environment.getExternalStorageDirectory() + "/"
-                    + "/localdash/" + System.currentTimeMillis() + ".jpg");
+                    + "/nithoppnet/" + System.currentTimeMillis() + ".jpg");
 
             File dirs = new File(f.getParent());
             if (!dirs.exists()) {

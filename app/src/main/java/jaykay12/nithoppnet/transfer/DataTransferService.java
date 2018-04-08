@@ -24,8 +24,8 @@ import jaykay12.nithoppnet.utils.Utility;
 public class DataTransferService extends IntentService {
 
     private static final int SOCKET_TIMEOUT = 5000;
-    public static final String ACTION_SEND_FILE = "org.drulabs.localdash.SEND_FILE";
-    public static final String ACTION_SEND_DATA = "org.drulabs.localdash.SEND_DATA";
+    public static final String ACTION_SEND_FILE = "jaykay12.nithoppnet.SEND_FILE";
+    public static final String ACTION_SEND_DATA = "jaykay12.nithoppnet.SEND_DATA";
 
     public static final String EXTRAS_FILE_PATH = "file_url";
     public static final String DEST_IP_ADDRESS = "host";

@@ -148,19 +148,6 @@ public class Utility{
             return ipAddrStr;
         }
 
-        public static boolean isWifiConnected(Context context) {
-            WifiManager wifiMgr = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-            if (wifiMgr.isWifiEnabled()) { // WiFi adapter is ON
-                WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
-                if (wifiInfo != null && wifiInfo.getNetworkId() == -1) {
-                    return false; // Not connected to an access-Point
-                }
-                return true;      // Connected to an Access Point
-            } else {
-                return false; // WiFi adapter is OFF
-            }
-        }
-
         public static boolean isWiFiEnabled(Context context) {
             WifiManager wifiMgr = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
             return wifiMgr.isWifiEnabled();

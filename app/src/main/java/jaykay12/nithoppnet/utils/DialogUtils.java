@@ -36,9 +36,8 @@ public class DialogUtils {
                         activity.startActivityForResult(imagePicker, CODE_PICK_IMAGE);
                         break;
                     case 1:
-                        DataSender.sendChatRequest(activity, selectedDevice.getIp
-                                (), selectedDevice.getPort());
-                        Toast.makeText(activity, "chat request " + "sent",Toast.LENGTH_LONG);
+                        DataSender.sendChatRequest(activity, selectedDevice.getIp(), selectedDevice.getPort());
+                        Toast.makeText(activity, "chat request " + "sent",Toast.LENGTH_LONG).show();
                         break;
                 }
             }
@@ -65,15 +64,13 @@ public class DialogUtils {
                     //Request accepted
                     case 0:
                         openChatActivity(activity, requesterDevice);
-                        Toast.makeText(activity, "Chat request " + "accepted",Toast.LENGTH_LONG);
-                        DataSender.sendChatResponse(activity, requesterDevice.getIp(),
-                                requesterDevice.getPort(), true);
+                        Toast.makeText(activity, "Chat request " + "accepted",Toast.LENGTH_LONG).show();
+                        DataSender.sendChatResponse(activity, requesterDevice.getIp(), requesterDevice.getPort(), true);
                         break;
                     // Request rejected
                     case 1:
-                        DataSender.sendChatResponse(activity, requesterDevice.getIp(),
-                                requesterDevice.getPort(), false);
-                        Toast.makeText(activity, "Chat request " + "rejected",Toast.LENGTH_LONG);
+                        DataSender.sendChatResponse(activity, requesterDevice.getIp(), requesterDevice.getPort(), false);
+                        Toast.makeText(activity, "Chat request " + "rejected",Toast.LENGTH_LONG).show();
                         break;
                 }
             }
