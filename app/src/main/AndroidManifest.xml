@@ -4,7 +4,7 @@
 
     <uses-permission
         android:name="android.permission.INTERNET"
-        android:required="true"/>
+        android:required="true" />
     <uses-permission
         android:name="android.permission.ACCESS_WIFI_STATE"
         android:required="true" />
@@ -24,7 +24,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -35,23 +34,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ChatActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FindPeerActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".transfer.DataTransferService"
-            android:enabled="true"/>
+            android:enabled="true" />
 
+        <activity android:name=".OppNetArena.CreateProfile" />
+        <activity android:name=".OppNetArena.GenerateSeed" />
+        <activity android:name=".OppNetArena.HelperActivity"></activity>
     </application>
 
 </manifest>

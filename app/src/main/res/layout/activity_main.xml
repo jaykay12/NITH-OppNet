@@ -40,12 +40,25 @@
         android:onClick="startWiFiDirect"
         android:layout_below="@+id/tvTitle"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Opportunistic Arena"
+        android:textStyle="bold"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/btnOppArena"
+        android:onClick="startOppNet"
+        android:layout_below="@+id/btnWifiDirect"/>
+
     <TextView
         android:id="@+id/tvPortInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnWifiDirect"
-        android:layout_marginTop="@dimen/Large_Margin"
+        android:layout_below="@id/btnOppArena"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:hint="@string/port_info"
         android:textSize="20sp"/>

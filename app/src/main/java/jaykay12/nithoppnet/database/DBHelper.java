@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final int DB_VERSION = 1;
-    private static final String DB_NAME = "dash.db";
+    private static final String DB_NAME = "nithoppnet.db";
 
     static final String TABLE_DEVICES = "devices";
     static final String COL_DEV_ID = "deviceid";

@@ -1,17 +1,21 @@
 package jaykay12.nithoppnet;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import jaykay12.nithoppnet.OppNetArena.DatabaseOperations;
+import jaykay12.nithoppnet.OppNetArena.GenerateSeed;
 import jaykay12.nithoppnet.database.DBAdapter;
 import jaykay12.nithoppnet.transfer.TransferConstants;
 import jaykay12.nithoppnet.utils.ConnectionUtils;
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etUserName;
     TextView tvPortNumber;
+    Context context;
+    DatabaseOperations dbobj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +38,16 @@ public class MainActivity extends AppCompatActivity {
         etUserName = (EditText) findViewById(R.id.etUserName);
         tvPortNumber = (TextView) findViewById(R.id.tvPortInfo);
 
+        context = this;
+        dbobj = new DatabaseOperations(context);
+        Toast.makeText(this,"Database Created Successfully",Toast.LENGTH_LONG).show();
+
         String userNameHint = "Enter your name"+"(default="+ Build.MANUFACTURER +")";
         etUserName.setHint(userNameHint);
 
         checkWritePermission();
+
+
     }
 
     @Override
@@ -80,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, getString(R.string
                     .wifi_not_enabled_error),Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void startOppNet(View v){
+        Intent i = new Intent(MainActivity.this, GenerateSeed.class);
+        startActivity(i);
+        finish();
     }
 
 }
