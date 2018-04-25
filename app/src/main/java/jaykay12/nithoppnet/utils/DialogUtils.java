@@ -22,7 +22,7 @@ public class DialogUtils {
     public static AlertDialog getServiceSelectionDialog(final Activity activity, final DeviceDTO selectedDevice) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
         alertDialog.setTitle(selectedDevice.getDeviceName());
-        String[] types = {"Share image", "Chat"};
+        String[] types = {"Act as Helper", "Chat"};
         alertDialog.setItems(types, new DialogInterface.OnClickListener() {
 
             @Override
@@ -31,9 +31,7 @@ public class DialogUtils {
                 dialog.dismiss();
                 switch (which) {
                     case 0:
-                        Intent imagePicker = new Intent(Intent.ACTION_PICK);
-                        imagePicker.setType("image/*");
-                        activity.startActivityForResult(imagePicker, CODE_PICK_IMAGE);
+
                         break;
                     case 1:
                         DataSender.sendChatRequest(activity, selectedDevice.getIp(), selectedDevice.getPort());

@@ -97,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
     public void startOppNet(View v){
         Intent i = new Intent(MainActivity.this, GenerateSeed.class);
         startActivity(i);
-        finish();
     }
 
 }

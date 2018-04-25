@@ -1,10 +1,12 @@
 package jaykay12.nithoppnet.OppNetArena;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,8 @@ public class GenerateSeed extends AppCompatActivity {
     TextView tvName,tvRollNum;
     EditText etMessage;
     DatabaseOperations dbobj;
+    Button btnView;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,17 @@ public class GenerateSeed extends AppCompatActivity {
         }
 
         setContentView(R.layout.generate_seed);
+
+        btnView = (Button)findViewById(R.id.btnViewMessages);
+        context = this;
+
+        btnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,ViewMessages.class);
+                startActivity(intent);
+            }
+        });
 
         tvName = (TextView)findViewById(R.id.tvName);
         tvRollNum = (TextView)findViewById(R.id.tvRollNum);
@@ -70,11 +85,7 @@ public class GenerateSeed extends AppCompatActivity {
 
         long result = dbobj.Add_Message(messageid,senderid,sendername,messagecontents);
         if(result>0)
-        {
-            Toast.makeText(this,"Success: Message Published",Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this,MainActivity.class);
-            this.startActivity(i);
-            this.finish();
-        }
+            Toast.makeText(this,"Success: Message Published",Toast.LENGTH_SHORT).show();
+
     }
 }

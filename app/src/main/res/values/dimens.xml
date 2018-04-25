@@ -8,4 +8,7 @@
 
     <dimen name="Text_Margin">16dp</dimen>
 
+    <dimen name="card_message_margin">5dp</dimen>
+    <dimen name="card_message_radius">0dp</dimen>
+
 </resources>

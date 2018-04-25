@@ -4,4 +4,10 @@
     <string name="port_info">Port Information</string>
     <string name="chat_request_title">Chat Request from %s</string>
     <string name="wd_title_with_count">Wifi-Direct(%s)</string>
+
+    <string name="my_name">Jalaz Kumar</string>
+    <string name="my_rollnum">14MI528</string>
+    <string name="dummy_message_id">14MI528</string>
+    <string name="dummy_message_contents">Assemble at Students park NIT Hamirpur for Nimbus Robowars Event\n Timings: 6:00 PM\n Organiser: Robotics Society NIT Hamirpur</string>
+
 </resources>

@@ -48,8 +48,12 @@
             android:enabled="true" />
 
         <activity android:name=".OppNetArena.CreateProfile" />
-        <activity android:name=".OppNetArena.GenerateSeed" />
-        <activity android:name=".OppNetArena.HelperActivity"></activity>
+        <activity
+            android:name=".OppNetArena.GenerateSeed"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".OppNetArena.ViewMessages"
+            android:parentActivityName=".OppNetArena.GenerateSeed" />
     </application>
 
 </manifest>
