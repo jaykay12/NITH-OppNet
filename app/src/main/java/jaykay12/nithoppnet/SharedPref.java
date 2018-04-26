@@ -1,4 +1,4 @@
-package jaykay12.nithoppnet.OppNetArena;
+package jaykay12.nithoppnet;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,7 +15,7 @@ public class SharedPref {
     private static final String PREF_NAME = "UserInfo";
     private static final String LOGIN_STATUS = "loginstatus";
 
-    SharedPref(Context context){
+    public SharedPref(Context context){
         sharedPreferences = context.getSharedPreferences(PREF_NAME,context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }

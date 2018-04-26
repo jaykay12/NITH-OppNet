@@ -37,11 +37,13 @@
         <activity
             android:name=".ChatActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".FindPeerActivity"/>
         <activity
             android:name=".FindPeerActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
 
         <service
             android:name=".transfer.DataTransferService"

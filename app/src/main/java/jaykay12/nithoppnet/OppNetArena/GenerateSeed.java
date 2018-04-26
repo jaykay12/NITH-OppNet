@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import jaykay12.nithoppnet.MainActivity;
 import jaykay12.nithoppnet.R;
+import jaykay12.nithoppnet.SharedPref;
 
 public class GenerateSeed extends AppCompatActivity {
 
@@ -85,7 +86,10 @@ public class GenerateSeed extends AppCompatActivity {
 
         long result = dbobj.Add_Message(messageid,senderid,sendername,messagecontents);
         if(result>0)
+        {
             Toast.makeText(this,"Success: Message Published",Toast.LENGTH_SHORT).show();
+            etMessage.setText("");
+        }
 
     }
 }

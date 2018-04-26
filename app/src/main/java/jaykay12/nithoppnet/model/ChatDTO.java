@@ -3,6 +3,7 @@ package jaykay12.nithoppnet.model;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by jaykay12 on 31/3/18.
@@ -16,6 +17,7 @@ public class ChatDTO implements Serializable {
     private String fromIP;
     private int port;
     private boolean isMyChat = false;
+    private List<MessageDTO> messages;
 
     public boolean isMyChat() {
         return isMyChat;
@@ -29,6 +31,10 @@ public class ChatDTO implements Serializable {
         return message;
     }
 
+    public List<MessageDTO> getMessages() {
+        return messages;
+    }
+
     public int getPort() {
         return port;
     }
@@ -39,6 +45,10 @@ public class ChatDTO implements Serializable {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void setMessages(List<MessageDTO> messages) {
+        this.messages = messages;
     }
 
     public String getSentBy() {

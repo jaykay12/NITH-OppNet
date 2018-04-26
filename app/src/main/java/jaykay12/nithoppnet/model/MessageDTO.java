@@ -1,10 +1,14 @@
 package jaykay12.nithoppnet.model;
 
+import com.google.gson.Gson;
+
+import java.io.Serializable;
+
 /**
  * Created by jaykay12 on 15/4/18.
  */
 
-public class MessageDTO {
+public class MessageDTO implements Serializable{
     public static final String TABLE_NAME = "messages";
 
     public static final String MESSAGE_ID = "messageid";
@@ -100,5 +104,17 @@ public class MessageDTO {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public String toString() {
+        String stringRep = (new Gson()).toJson(this);
+        return stringRep;
+    }
+
+    public static MessageDTO fromJSON(String jsonRep) {
+        Gson gson = new Gson();
+        MessageDTO messageObject = gson.fromJson(jsonRep, MessageDTO.class);
+        return messageObject;
     }
 }

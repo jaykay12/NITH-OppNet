@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteConstraintException;
 import android.net.Uri;
 import android.net.wifi.WpsInfo;
 import android.net.wifi.p2p.WifiP2pConfig;
@@ -19,16 +20,18 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import jaykay12.nithoppnet.OppNetArena.DatabaseOperations;
 import jaykay12.nithoppnet.database.DBAdapter;
+import jaykay12.nithoppnet.model.ChatDTO;
 import jaykay12.nithoppnet.model.DeviceDTO;
+import jaykay12.nithoppnet.model.MessageDTO;
 import jaykay12.nithoppnet.transfer.DataHandler;
 import jaykay12.nithoppnet.transfer.DataSender;
 import jaykay12.nithoppnet.transfer.TransferConstants;
@@ -38,6 +41,9 @@ import jaykay12.nithoppnet.utils.Utility;
 
 public class FindPeerActivity extends AppCompatActivity implements PeerListFragment.OnListFragmentInteractionListener
         , WifiP2pManager.PeerListListener, WifiP2pManager.ConnectionInfoListener {
+
+    public static final String ACTION_CHAT_RECEIVED = "jaykay12.nithoppnet.chatreceived";
+    public static final String KEY_CHAT_DATA = "chat_data_key";
 
     public static final String FIRST_DEVICE_CONNECTED = "first_device_connected";
     public static final String KEY_FIRST_DEVICE_IP = "first_device_ip";
@@ -50,6 +56,8 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
 
     WifiP2pManager wifiP2pManager;
     WifiP2pManager.Channel wifip2pChannel;
+    DatabaseOperations dbobj;
+    SharedPref sharedPref;
     WifiDirectBroadcastReceiver wiFiDirectBroadcastReceiver;
     private boolean isWifiP2pEnabled = false;
 
@@ -92,6 +100,10 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
         // Starting connection listener with default port for now
         appController = (AppController) getApplicationContext();
         appController.startConnectionListener(TransferConstants.INITIAL_DEFAULT_PORT);
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ACTION_CHAT_RECEIVED);
+        LocalBroadcastManager.getInstance(this).registerReceiver(chatReceiver, filter);
 
         checkWritePermission();
     }
@@ -279,6 +291,53 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
         }
     }
 
+    private BroadcastReceiver chatReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.v("### Recevied something","yy");
+            switch (intent.getAction()) {
+                case ACTION_CHAT_RECEIVED:
+                    ChatDTO chat = (ChatDTO) intent.getSerializableExtra(KEY_CHAT_DATA);
+                    chat.setMyChat(false);
+                    Log.v("### Recevied",chat.getMessages()+"");
+
+                    List<MessageDTO> messageRecieved = chat.getMessages();
+                    String messageid="", senderid="", sendername="", messagecontents="";
+                    dbobj = new DatabaseOperations(getApplicationContext());
+                    sharedPref = new SharedPref(getApplicationContext());
+                    long result=0;
+                    int i;
+                    int countMSG = 0;
+                    for(i=0;i<messageRecieved.size();i++)
+                    {
+                        MessageDTO messageDTO = messageRecieved.get(i);
+                        messageid = messageDTO.getMessage_id();
+                        senderid = messageDTO.getSender_id();
+                        sendername = messageDTO.getSender_name();
+                        messagecontents = messageDTO.getContent();
+                        try
+                        {
+                            result = dbobj.Add_Message(messageid,senderid,sendername,messagecontents);
+                            countMSG++;
+                        }
+                        catch(SQLiteConstraintException exp){
+                            Log.v("##",exp+"");
+                        }
+
+                    }
+
+                    if(countMSG>0)
+                        Toast.makeText(getApplicationContext(),"Total "+countMSG+" Messages Recieved from "+sendername+"!",Toast.LENGTH_SHORT).show();
+
+
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+
+
     @Override
     public void onPeersAvailable(WifiP2pDeviceList peerList) {
 
@@ -330,6 +389,7 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
         } else {
             selectedDevice = deviceDTO;
 //            showServiceSelectionDialog();
+
             DialogUtils.getServiceSelectionDialog(FindPeerActivity.this, deviceDTO).show();
         }
     }

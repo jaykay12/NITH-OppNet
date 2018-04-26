@@ -99,4 +99,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void sendLeech(View v){
+
+    }
+
 }

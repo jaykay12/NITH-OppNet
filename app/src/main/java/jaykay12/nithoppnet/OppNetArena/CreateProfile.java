@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import jaykay12.nithoppnet.R;
+import jaykay12.nithoppnet.SharedPref;
 
 public class CreateProfile extends AppCompatActivity {
 
