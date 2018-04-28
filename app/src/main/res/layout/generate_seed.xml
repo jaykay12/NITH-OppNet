@@ -43,7 +43,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/borders"
+        android:background="@drawable/seed_generation_border"
         android:inputType="textMultiLine"
         android:gravity="start"
         android:id="@+id/etInputMessage"

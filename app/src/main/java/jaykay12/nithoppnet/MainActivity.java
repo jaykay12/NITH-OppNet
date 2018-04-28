@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etUserName;
     TextView tvPortNumber;
-    Context context;
-    DatabaseOperations dbobj;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         etUserName = (EditText) findViewById(R.id.etUserName);
         tvPortNumber = (TextView) findViewById(R.id.tvPortInfo);
 
-        context = this;
-        dbobj = new DatabaseOperations(context);
-        Toast.makeText(this,"Database Created Successfully",Toast.LENGTH_LONG).show();
 
         String userNameHint = "Enter your name"+"(default="+ Build.MANUFACTURER +")";
         etUserName.setHint(userNameHint);

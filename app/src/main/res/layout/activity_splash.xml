@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/Little_Margin"
+    android:padding="@dimen/Little_Margin"
+    android:background="@drawable/splash_border"
+    tools:context="jaykay12.nithoppnet.SplashActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/institute_name"
+        android:gravity="center"
+        android:id="@+id/tvInstituteName"
+        android:textStyle="bold"
+        android:textSize="@dimen/title_text"
+        android:layout_margin="@dimen/Large_Margin" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nithlogo"
+        android:id="@+id/ivNITLOGO"
+        android:layout_margin="@dimen/Little_Margin"
+        android:layout_below="@+id/tvInstituteName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_activity_title"
+        android:id="@+id/tvSPlashTitle"
+        android:layout_below="@+id/ivNITLOGO"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="@dimen/Text_Margin"
+        android:layout_marginLeft="@dimen/Text_Margin"
+        android:textStyle="italic|bold"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/ivLoader"
+        android:layout_below="@+id/ivNITLOGO"
+        android:layout_marginTop="220dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_condition"
+        android:id="@+id/tvLoading"
+        android:layout_below="@+id/ivLoader"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+
+</RelativeLayout>

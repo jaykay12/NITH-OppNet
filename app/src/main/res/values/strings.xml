@@ -10,4 +10,9 @@
     <string name="dummy_message_id">14MI528</string>
     <string name="dummy_message_contents">Assemble at Students park NIT Hamirpur for Nimbus Robowars Event\n Timings: 6:00 PM\n Organiser: Robotics Society NIT Hamirpur</string>
 
+    <string name="institute_name">NIT Hamirpur(H.P)</string>
+    <string name="splash_activity_title">Institute\'s First Ever indigenously developed Opportunistic Mobile Adhoc Network!</string>
+
+    <string name="loading_condition">LOADING</string>
+
 </resources>

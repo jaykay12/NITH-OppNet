@@ -11,4 +11,6 @@
     <dimen name="card_message_margin">5dp</dimen>
     <dimen name="card_message_radius">0dp</dimen>
 
+    <dimen name="title_text">24dp</dimen>
+
 </resources>

@@ -31,14 +31,6 @@ public class GenerateSeed extends AppCompatActivity {
         sharedPref = new SharedPref(this);
         dbobj = new DatabaseOperations(this);
 
-        Log.v("login status:",""+sharedPref.getLoginStatus());
-
-        if(sharedPref.getLoginStatus()==false){
-            Intent intent = new Intent(GenerateSeed.this,CreateProfile.class);
-            startActivity(intent);
-            finish();
-        }
-
         setContentView(R.layout.generate_seed);
 
         btnView = (Button)findViewById(R.id.btnViewMessages);
