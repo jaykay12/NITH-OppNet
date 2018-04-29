@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jaykay12.nithoppnet.OppNetArena.GenerateSeed"
+    tools:context="jaykay12.nithoppnet.activities.GenerateSeed"
     android:orientation="vertical">
 
     <LinearLayout

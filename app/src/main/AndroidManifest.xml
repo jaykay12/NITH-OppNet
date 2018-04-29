@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".AppController"
+        android:name=".utils.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,32 +35,32 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ChatActivity"
+            android:name=".activities.ChatActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".FindPeerActivity"
+            android:parentActivityName=".activities.FindPeerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FindPeerActivity"
+            android:name=".activities.FindPeerActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="portrait" />
 
         <service
             android:name=".transfer.DataTransferService"
             android:enabled="true" />
 
-        <activity android:name=".OppNetArena.CreateProfile" />
+        <activity android:name=".activities.SignUpActivity" />
         <activity
-            android:name=".OppNetArena.GenerateSeed"
-            android:parentActivityName=".MainActivity" />
+            android:name=".activities.GenerateSeed"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".OppNetArena.ViewMessages"
-            android:parentActivityName=".OppNetArena.GenerateSeed" />
+            android:name=".activities.ViewMessages"
+            android:parentActivityName=".activities.GenerateSeed" />
             </application>
 
 </manifest>

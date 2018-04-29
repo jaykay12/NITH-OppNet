@@ -8,7 +8,7 @@
     android:layout_margin="@dimen/Little_Margin"
     android:padding="@dimen/Little_Margin"
     android:background="@drawable/splash_border"
-    tools:context="jaykay12.nithoppnet.SplashActivity">
+    tools:context="jaykay12.nithoppnet.activities.SplashActivity">
 
     <TextView
         android:layout_width="match_parent"

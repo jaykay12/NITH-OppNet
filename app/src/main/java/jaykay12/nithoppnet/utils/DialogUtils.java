@@ -9,15 +9,15 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import jaykay12.nithoppnet.ChatActivity;
-import jaykay12.nithoppnet.OppNetArena.DatabaseOperations;
+import jaykay12.nithoppnet.activities.ChatActivity;
+import jaykay12.nithoppnet.database.DatabaseOperations;
 import jaykay12.nithoppnet.R;
 import jaykay12.nithoppnet.model.ChatDTO;
 import jaykay12.nithoppnet.model.DeviceDTO;
 import jaykay12.nithoppnet.model.MessageDTO;
 import jaykay12.nithoppnet.transfer.DataSender;
 
-import static jaykay12.nithoppnet.ChatActivity.KEY_CHATTING_WITH;
+import static jaykay12.nithoppnet.activities.ChatActivity.KEY_CHATTING_WITH;
 
 /**
  * Created by jaykay12 on 31/3/18.

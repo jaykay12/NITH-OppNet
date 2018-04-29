@@ -6,8 +6,8 @@ import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import jaykay12.nithoppnet.ChatActivity;
-import jaykay12.nithoppnet.FindPeerActivity;
+import jaykay12.nithoppnet.activities.ChatActivity;
+import jaykay12.nithoppnet.activities.FindPeerActivity;
 import jaykay12.nithoppnet.database.DBAdapter;
 import jaykay12.nithoppnet.model.ChatDTO;
 import jaykay12.nithoppnet.model.DeviceDTO;
