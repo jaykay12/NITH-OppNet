@@ -3,14 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/Little_Margin"
+    android:padding="@dimen/Little_Margin"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/my_name"
-        android:textSize="@dimen/title_text"
-        android:textStyle="bold"
-        android:layout_margin="@dimen/Large_Margin" />
+   <GridView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/gvAvatars"
+       android:numColumns="auto_fit"
+       android:gravity="center"
+       android:layout_gravity="center"
+       android:verticalSpacing="24dp"
+       android:horizontalSpacing="10dp"
+       android:columnWidth="90dp"
+       android:stretchMode="spacingWidthUniform"/>
 
 </LinearLayout>

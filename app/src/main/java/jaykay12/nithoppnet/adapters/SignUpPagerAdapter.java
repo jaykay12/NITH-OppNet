@@ -21,11 +21,11 @@ public class SignUpPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         String string="";
         switch(position){
-            case 0: string="Provide Details";
+            case 0: string="Choose an Avatar";
                     break;
-            case 1: string="Choose an Avatar";
+            case 1: string="Provide Details";
                     break;
-            default: string="Provide Details";
+            default: string="Choose an Avatar";
         }
 
         return string;
@@ -36,11 +36,11 @@ public class SignUpPagerAdapter extends FragmentStatePagerAdapter {
         Fragment fragment = null;
 
         switch (position){
-            case 0: fragment = ProfileFragment.get();
+            case 0: fragment = ChooseAvatarFragment.get();
                     break;
-            case 1: fragment = ChooseAvatarFragment.get();
+            case 1: fragment = ProfileFragment.get();
                     break;
-            default: fragment = ProfileFragment.get();
+            default: fragment = ChooseAvatarFragment.get();
         }
 
         return fragment;
