@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import jaykay12.nithoppnet.R;
 import jaykay12.nithoppnet.database.DBAdapter;
 import jaykay12.nithoppnet.transfer.TransferConstants;
 import jaykay12.nithoppnet.utils.ConnectionUtils;
+import jaykay12.nithoppnet.utils.SharedPref;
 import jaykay12.nithoppnet.utils.Utility;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,20 +25,27 @@ public class MainActivity extends AppCompatActivity {
     public static final String WRITE_PERMISSION = Manifest.permission.WRITE_EXTERNAL_STORAGE;
     public static final int WRITE_PERM_REQ_CODE = 19;
 
-    EditText etUserName;
     TextView tvPortNumber;
-
+    ImageView ivDisplayPic;
+    TextView tvDisplayName;
+    SharedPref sharedPref;
+    Bundle bd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        etUserName = (EditText) findViewById(R.id.etUserName);
+
+        sharedPref = new SharedPref(this);
+        bd = new Bundle();
+        bd = sharedPref.getInfo();
+
         tvPortNumber = (TextView) findViewById(R.id.tvPortInfo);
+        ivDisplayPic = (ImageView)findViewById(R.id.ivDisplayPic);
+        tvDisplayName = (TextView)findViewById(R.id.tvDisplayName);
 
-
-        String userNameHint = "Enter your name"+"(default="+ Build.MANUFACTURER +")";
-        etUserName.setHint(userNameHint);
+        ivDisplayPic.setImageResource(sharedPref.getAvatar());
+        tvDisplayName.setText(bd.getString("name"));
 
         checkWritePermission();
 
@@ -62,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveUsername() {
-        String userName = etUserName.getText().toString();
+        bd = sharedPref.getInfo();
+        String userName = bd.getString("name")+" - "+Build.MANUFACTURER;
         if (userName != null && userName.trim().length() > 0) {
             Utility.saveString(MainActivity.this, TransferConstants.KEY_USER_NAME, userName);
         }

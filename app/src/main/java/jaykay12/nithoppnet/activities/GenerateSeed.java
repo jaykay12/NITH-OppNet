@@ -55,7 +55,7 @@ public class GenerateSeed extends AppCompatActivity {
 
     public void logout(View v){
         sharedPref.setLoginStatus(false);
-        Intent intent = new Intent(GenerateSeed.this, MainActivity.class);
+        Intent intent = new Intent(GenerateSeed.this, SignUpActivity.class);
         startActivity(intent);
         finish();
     }

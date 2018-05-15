@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import jaykay12.nithoppnet.R;
 import jaykay12.nithoppnet.activities.GenerateSeed;
+import jaykay12.nithoppnet.activities.MainActivity;
 import jaykay12.nithoppnet.utils.SharedPref;
 
 /**
@@ -39,6 +40,23 @@ public class ProfileFragment extends Fragment{
         etName = (EditText)view.findViewById(R.id.etName);
         etRollNum = (EditText)view.findViewById(R.id.etRollNum);
 
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v("Inside Function","");
+                String name,rollnum;
+                name = etName.getText().toString();
+                rollnum = etRollNum.getText().toString();
+
+                sharedPref.saveInfo(name,rollnum);
+                sharedPref.setLoginStatus(true);
+                sharedPref.updateCurrentCode(0);
+
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 
@@ -46,17 +64,4 @@ public class ProfileFragment extends Fragment{
         return new ProfileFragment();
     }
 
-
-
-/*    public void createArena(View v){
-        Log.v("Inside Function","");
-        String name,rollnum;
-        name = etName.getText().toString();
-        rollnum = etRollNum.getText().toString();
-
-        sharedPref.saveInfo(name,rollnum);
-        sharedPref.setLoginStatus(true);
-        sharedPref.updateCurrentCode(0);
-    }
-*/
 }

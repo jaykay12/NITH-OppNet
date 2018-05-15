@@ -10,13 +10,14 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_margin="@dimen/card_message_margin"
+        android:padding="@dimen/Little_Margin"
         android:elevation="3dp"
         app:cardCornerRadius="@dimen/card_message_radius">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:padding="@dimen/Little_Margin">
 
             <TextView
                 android:id="@+id/tvMessageID"
@@ -30,16 +31,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/Little_Margin"
-                android:text="@string/my_name" />
+                android:textStyle="bold"
+                android:text="@string/my_name"
+                android:layout_below="@+id/tvMessageID"/>
 
             <TextView
                 android:id="@+id/tvMessageContents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/Little_Margin"
+                android:textStyle="italic"
+                android:background="@drawable/splash_border"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:layout_below="@id/tvSenderName"
                 android:text="@string/dummy_message_contents" />
 
-        </LinearLayout>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/ivAvatarDisplay"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/kid1"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 

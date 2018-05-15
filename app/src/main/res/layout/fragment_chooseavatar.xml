@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/Little_Margin"
     android:padding="@dimen/Little_Margin"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/layout_choose">
 
    <GridView
        android:layout_width="match_parent"

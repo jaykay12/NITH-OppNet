@@ -7,25 +7,44 @@
     android:layout_height="match_parent"
     tools:context="jaykay12.nithoppnet.activities.MainActivity">
 
-    <EditText
-        android:id="@+id/etUserName"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/Large_Margin"
-        android:ems="10"
-        android:hint="Enter your Name"
-        android:inputType="textPersonName"/>
+        android:background="@drawable/splash_border"
+        android:padding="@dimen/Large_Margin"
+        android:layout_margin="@dimen/Little_Margin"
+        android:id="@+id/rlHeader">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/ivDisplayPic"
+            android:layout_alignParentLeft="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First-Ever Opportunistic Network of NITH!"
-        android:id="@+id/tvTitle"
-        android:layout_marginTop="150dp"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:text="@string/welcome_msg"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_name"
+                android:layout_marginTop="@dimen/Little_Margin"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:id="@+id/tvDisplayName"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <Button
         android:layout_width="match_parent"
@@ -38,7 +57,7 @@
         android:layout_marginLeft="40dp"
         android:id="@+id/btnWifiDirect"
         android:onClick="startWiFiDirect"
-        android:layout_below="@+id/tvTitle"/>
+        android:layout_below="@+id/rlHeader"/>
 
     <Button
         android:layout_width="match_parent"
@@ -71,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnOppArena"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:gravity="center"
         android:hint="@string/port_info"
         android:textSize="20sp"/>

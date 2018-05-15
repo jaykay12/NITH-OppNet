@@ -18,7 +18,7 @@ import jaykay12.nithoppnet.R;
 public class AvatarsAdapter extends BaseAdapter {
 
     private final Context context;
-    private final Integer[] Avatars;
+    public final Integer[] Avatars;
 
 
     public AvatarsAdapter(Context context) {

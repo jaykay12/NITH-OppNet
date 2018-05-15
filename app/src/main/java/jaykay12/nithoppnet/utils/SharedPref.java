@@ -13,6 +13,8 @@ public class SharedPref {
     private SharedPreferences.Editor editor;
 
     private static final String PREF_NAME = "UserInfo";
+
+    private static final String AVATAR = "avatar";
     private static final String LOGIN_STATUS = "loginstatus";
 
     public SharedPref(Context context){
@@ -24,6 +26,13 @@ public class SharedPref {
         editor.putBoolean(LOGIN_STATUS,isLogIn);
         editor.commit();
     }
+
+    public void setAvatar(int avatar){
+        editor.putInt(AVATAR,avatar);
+        editor.commit();
+    }
+
+    public int getAvatar() {return sharedPreferences.getInt(AVATAR,2131165295); }
 
     public boolean getLoginStatus(){
         return sharedPreferences.getBoolean(LOGIN_STATUS,false);

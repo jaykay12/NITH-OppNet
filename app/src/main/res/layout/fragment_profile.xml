@@ -10,7 +10,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="@string/get_name"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="80dp"
@@ -19,7 +19,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="NITH - Roll Num"
+        android:hint="@string/get_rollnum"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
@@ -28,10 +28,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREATE OppNet ARENA"
+        android:text="@string/create_arena"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:id="@+id/btnCreate"
-        android:onClick="createArena"/>
+        android:id="@+id/btnCreate"/>
 
 </LinearLayout>

@@ -13,6 +13,12 @@
     <string name="institute_name">NIT Hamirpur(H.P)</string>
     <string name="splash_activity_title">Institute\'s First Ever indigenously developed Opportunistic Mobile Adhoc Network!</string>
 
+    <string name="get_name">Name</string>
+    <string name="get_rollnum">NITH - Roll Number</string>
+    <string name="create_arena">Create OppNet Arena</string>
+
+    <string name="welcome_msg">Welcome</string>
+
     <string name="loading_condition">LOADING</string>
 
 </resources>
