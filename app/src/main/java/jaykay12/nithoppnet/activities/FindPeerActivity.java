@@ -313,22 +313,24 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
                     long result=0;
                     int i;
                     int countMSG = 0;
-                    for(i=0;i<messageRecieved.size();i++)
-                    {
-                        MessageDTO messageDTO = messageRecieved.get(i);
-                        messageid = messageDTO.getMessage_id();
-                        senderid = messageDTO.getSender_id();
-                        sendername = messageDTO.getSender_name();
-                        messagecontents = messageDTO.getContent();
-                        try
-                        {
-                            result = dbobj.Add_Message(messageid,senderid,sendername,messagecontents);
-                            countMSG++;
-                        }
-                        catch(SQLiteConstraintException exp){
-                            Log.v("##",exp+"");
-                        }
+                    try {
+                        for (i = 0; i < messageRecieved.size(); i++) {
+                            MessageDTO messageDTO = messageRecieved.get(i);
+                            messageid = messageDTO.getMessage_id();
+                            senderid = messageDTO.getSender_id();
+                            sendername = messageDTO.getSender_name();
+                            messagecontents = messageDTO.getContent();
+                            try {
+                                result = dbobj.Add_Message(messageid, senderid, sendername, messagecontents);
+                                countMSG++;
+                            } catch (SQLiteConstraintException exp) {
+                                Log.v("##", exp + "");
+                            }
 
+                        }
+                    }
+                    catch(NullPointerException exp){
+                        Log.v("##","Lag gye!");
                     }
 
                     if(countMSG>0)

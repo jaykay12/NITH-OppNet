@@ -21,4 +21,18 @@
 
     <string name="loading_condition">LOADING</string>
 
+    <string name="project_name">NITH OppNet</string>
+    <string name="project_description">Intra NITH mobile adhoc network based on User Mobility facilitating News Dissemination</string>
+    <string name="dept_name">Computer Science and Engineering Department</string>
+    <string name="college_name">National Institute of Technology, Hamirpur</string>
+    <string name="supervisor_name">Mr. Rajiv Kumar</string>
+    <string name="supervisor_designation">Assistant Professor</string>
+
+    <string name="name1">Jalaz Kumar, 14MI528</string>
+    <string name="name2">Pritish Chouhan, 14MI516</string>
+    <string name="name3">Aarti Ramoul, 14MI547</string>
+    <string name="name4">Aditya Thakur, 14MI521</string>
+    <string name="name5">Amandeep Prasad, 14MI507</string>
+    <string name="name6">Rajat Patial, 14MI512</string>
+
 </resources>
