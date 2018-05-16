@@ -55,7 +55,7 @@ public class AvatarsAdapter extends BaseAdapter {
     }
 
     public Integer[] popoulateAvatarList(){
-        Integer[] avatar = new Integer[40];
+        Integer[] avatar = new Integer[39];
 
         avatar[0] = R.drawable.kid1;avatar[1] = R.drawable.kid2;avatar[2] = R.drawable.kid3;avatar[3] = R.drawable.kid4;
         avatar[4] = R.drawable.kid5;avatar[5] = R.drawable.kid6;avatar[6] = R.drawable.kid7;avatar[7] = R.drawable.kid8;
@@ -66,7 +66,7 @@ public class AvatarsAdapter extends BaseAdapter {
         avatar[24] = R.drawable.kid25;avatar[25] = R.drawable.kid26;avatar[26] = R.drawable.kid27;avatar[27] = R.drawable.kid28;
         avatar[28] = R.drawable.kid29;avatar[29] = R.drawable.kid30;avatar[30] = R.drawable.kid31;avatar[31] = R.drawable.kid32;
         avatar[32] = R.drawable.kid33;avatar[33] = R.drawable.kid34;avatar[34] = R.drawable.kid35;avatar[35] = R.drawable.kid36;
-        avatar[36] = R.drawable.kid37;avatar[37] = R.drawable.kid38;avatar[38] = R.drawable.kid39;avatar[39] = R.drawable.kid40;
+        avatar[36] = R.drawable.kid37;avatar[37] = R.drawable.kid38;avatar[38] = R.drawable.kid39;
 
         return avatar;
     }

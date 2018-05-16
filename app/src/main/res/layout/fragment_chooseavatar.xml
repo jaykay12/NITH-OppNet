@@ -14,10 +14,8 @@
        android:id="@+id/gvAvatars"
        android:numColumns="auto_fit"
        android:gravity="center"
-       android:layout_gravity="center"
-       android:verticalSpacing="24dp"
-       android:horizontalSpacing="10dp"
-       android:columnWidth="90dp"
-       android:stretchMode="spacingWidthUniform"/>
+       android:verticalSpacing="8dp"
+       android:horizontalSpacing="8dp"
+       android:columnWidth="90dp" />
 
 </LinearLayout>
