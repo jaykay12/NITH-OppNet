@@ -16,13 +16,14 @@ public class MessageDTO implements Serializable{
     public static final String SENDER_NAME = "sendername";
     public static final String MESSAGE_CONTENT = "messagecontent";
     public static final String COLUMN_TIMESTAMP = "timestamp";
+    public static final String SENDER_AVATAR = "senderavatar";
 
     private String message_id;
     private String sender_id;
     private String sender_name;
     private String content;
     private String timestamp;
-
+    private Integer sender_avatar;
 
     // Create table SQL query
     public static final String CREATE_TABLE =
@@ -31,44 +32,30 @@ public class MessageDTO implements Serializable{
                     + SENDER_ID + " TEXT,"
                     + SENDER_NAME + " TEXT,"
                     + MESSAGE_CONTENT + " TEXT,"
-                    + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+                    + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP,"
+                    + SENDER_AVATAR + " INTEGER"
                     + ")";
 
     public MessageDTO() {
 
     }
 
-    public MessageDTO(String message_id, String sender_id, String sender_name, String content, String timestamp) {
+    public MessageDTO(String message_id, String sender_id, String sender_name, String content, String timestamp, Integer sender_avatar) {
         this.message_id = message_id;
         this.sender_id = sender_id;
         this.sender_name = sender_name;
         this.content = content;
         this.timestamp = timestamp;
+        this.sender_avatar = sender_avatar;
     }
 
-    public static String getMessageId() {
-        return MESSAGE_ID;
-    }
-
-    public static String getSenderId() {
-        return SENDER_ID;
-    }
-
-    public static String getSenderName() {
-        return SENDER_NAME;
-    }
-
-    public static String getMessageContent() {
-        return MESSAGE_CONTENT;
-    }
-
-    public static String getColumnTimestamp() {
-        return COLUMN_TIMESTAMP;
-    }
+    public Integer getSender_avatar() { return sender_avatar; }
 
     public String getMessage_id() {
         return message_id;
     }
+
+    public void setSender_avatar(Integer sender_avatar){ this.sender_avatar = sender_avatar; }
 
     public void setMessage_id(String message_id) {
         this.message_id = message_id;

@@ -14,6 +14,8 @@ import jaykay12.nithoppnet.database.DatabaseOperations;
 import jaykay12.nithoppnet.R;
 import jaykay12.nithoppnet.utils.SharedPref;
 
+import static com.bumptech.glide.load.engine.DiskCacheStrategy.NONE;
+
 public class SplashActivity extends Activity {
     private static final long TIME_SPLASH=10000;
     ImageView ivLoader;
@@ -32,6 +34,7 @@ public class SplashActivity extends Activity {
                 .load(R.drawable.loader)
                 .asGif()
                 .crossFade()
+                .diskCacheStrategy(NONE)
                 .into(ivLoader);
 
         context = this;

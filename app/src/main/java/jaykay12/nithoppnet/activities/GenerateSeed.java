@@ -62,6 +62,7 @@ public class GenerateSeed extends AppCompatActivity {
 
     public void publishMessage(View v){
         String messageid, senderid, sendername, messagecontents;
+        Integer senderavatar = sharedPref.getAvatar();
 
         tvRollNum = (TextView)findViewById(R.id.tvRollNum);
         tvName = (TextView)findViewById(R.id.tvName);
@@ -75,7 +76,7 @@ public class GenerateSeed extends AppCompatActivity {
         messageid = senderid+current_code;
         sharedPref.updateCurrentCode(current_code+1);
 
-        long result = dbobj.Add_Message(messageid,senderid,sendername,messagecontents);
+        long result = dbobj.Add_Message(messageid,senderid,sendername,messagecontents,senderavatar);
         if(result>0)
         {
             Toast.makeText(this,"Success: Message Published",Toast.LENGTH_SHORT).show();

@@ -35,13 +35,14 @@ public class DatabaseOperations extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public long Add_Message(String MESSAGE_ID,String SENDER_ID,String SENDER_NAME,String MESSAGE_CONTENT){
+    public long Add_Message(String MESSAGE_ID,String SENDER_ID,String SENDER_NAME,String MESSAGE_CONTENT, Integer SENDER_AVATAR){
         db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("messageid",MESSAGE_ID);
         cv.put("senderid",SENDER_ID);
         cv.put("sendername",SENDER_NAME);
         cv.put("messagecontent",MESSAGE_CONTENT);
+        cv.put("senderavatar",SENDER_AVATAR);
 
         long r1 = db.insert(MessageDTO.TABLE_NAME,null,cv);
         db.close();
@@ -66,6 +67,7 @@ public class DatabaseOperations extends SQLiteOpenHelper{
                 message.setSender_name(cursor.getString(cursor.getColumnIndex(MessageDTO.SENDER_NAME)));
                 message.setContent(cursor.getString(cursor.getColumnIndex(MessageDTO.MESSAGE_CONTENT)));
                 message.setTimestamp(cursor.getString(cursor.getColumnIndex(MessageDTO.COLUMN_TIMESTAMP)));
+                message.setSender_avatar(cursor.getInt(cursor.getColumnIndex(MessageDTO.SENDER_AVATAR)));
 
                 messages.add(message);
             } while (cursor.moveToNext());

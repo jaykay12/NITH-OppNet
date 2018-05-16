@@ -308,6 +308,7 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
 
                     List<MessageDTO> messageRecieved = chat.getMessages();
                     String messageid="", senderid="", sendername="", messagecontents="";
+                    Integer senderavatar;
                     dbobj = new DatabaseOperations(getApplicationContext());
                     sharedPref = new SharedPref(getApplicationContext());
                     long result=0;
@@ -320,8 +321,9 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
                             senderid = messageDTO.getSender_id();
                             sendername = messageDTO.getSender_name();
                             messagecontents = messageDTO.getContent();
+                            senderavatar = messageDTO.getSender_avatar();
                             try {
-                                result = dbobj.Add_Message(messageid, senderid, sendername, messagecontents);
+                                result = dbobj.Add_Message(messageid, senderid, sendername, messagecontents,senderavatar);
                                 countMSG++;
                             } catch (SQLiteConstraintException exp) {
                                 Log.v("##", exp + "");
@@ -334,7 +336,7 @@ public class FindPeerActivity extends AppCompatActivity implements PeerListFragm
                     }
 
                     if(countMSG>0)
-                        Toast.makeText(getApplicationContext(),"Total "+countMSG+" Messages Recieved from "+sendername+"!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Messages Recieved from "+sendername+"!",Toast.LENGTH_SHORT).show();
 
 
                     break;

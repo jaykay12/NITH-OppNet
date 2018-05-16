@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -23,12 +24,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView messageID, senderName, messageContents;
+        public ImageView senderAvatar;
 
         public MyViewHolder(View view){
             super(view);
             messageID = (TextView) view.findViewById(R.id.tvMessageID);
             senderName = (TextView) view.findViewById(R.id.tvSenderName);
             messageContents = (TextView) view.findViewById(R.id.tvMessageContents);
+            senderAvatar = (ImageView)view.findViewById(R.id.ivAvatarDisplay);
         }
     }
 
@@ -49,7 +52,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
         holder.messageID.setText(message.getMessage_id());
         holder.senderName.setText(message.getSender_name());
         holder.messageContents.setText(message.getContent());
-
+        holder.senderAvatar.setImageResource(message.getSender_avatar());
     }
 
     @Override
